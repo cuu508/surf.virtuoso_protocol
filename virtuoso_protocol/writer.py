@@ -107,7 +107,7 @@ class WriterPlugin(SPARQLWriterPlugin):
             for query_str in translated:
                 query_str = define_clause + query_str
                 self.log.debug(query_str)
-                self.__sparql_wrapper.setQuery(query_str)
+                self.__sparql_wrapper.setQuery(query_str.encode("utf-8"))
                 self.__sparql_wrapper.query()
 
             return True
